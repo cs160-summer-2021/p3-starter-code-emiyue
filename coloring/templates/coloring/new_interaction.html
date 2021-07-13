@@ -16,11 +16,11 @@
 
 	<style type="text/css">
 		#color-palette {
-			width: 300px;
+			width: 100%;
 			background-color: #f1f1f1;
 			display: flex;
 			flex-wrap: wrap;
-			position: absolute;
+			position: relative;
 			top: 0;
 		}
 
@@ -39,6 +39,14 @@
 		  margin-left: auto;
 		  margin-right: auto;
 		  display: block;
+			position: relative;
+			/*
+			object-fit:scale-down;
+			position: absolute;
+	 		top: 50%;
+	 		left: 50%;
+	 		transform: translate(-50%, -50%); */
+			transform: scale(0.8);
 		}
 
 		.container-fluid{
@@ -58,28 +66,41 @@
 			float:left;
 		}
 
-		#c1r1{
-			height: 15%;
+		#c1c1 {
+			width: 20%;
+			background-color: red;
+			float:left;
 		}
 
-		#c1r2{
-			height: 70%;
+		#c1c2 {
+			width: 80%;
+			background-color: blue;
+			float:left;
+		}
+
+		#c1c1r1 {
+			height: 10%;
+		}
+
+		#c1c1r2 {
+			height: 30%;
 			margin: auto;
 		}
 
-		#c1r2c1 {
+		#c1c1r3 {
+			height: 60%;
+			margin: auto;
+		}
+
+		#c1c1r1c1 {
 			width: 20%;
-			background-color: red;
 		}
 
-		#c1r2c2 {
+		#c1c1r1c2 {
 			width: 80%;
-			background-color: blue;
 		}
 
-		#c1r3{
-			height: 15%;
-		}
+
 	</style>
 
 	<script type="text/javascript" canvas="canvas">
@@ -92,6 +113,7 @@
 				lastClicked: null,
 				filePath: '/static/coloring/images/mandala-freepik.svg'
 			};
+
 
 			// color palette
 			var cp = {
@@ -140,6 +162,11 @@
 				});
 			}
 
+			$( "#colorpicker" ).click(function changeColor() {
+            cp.options.push(document.getElementById("colorpicker").value);
+						createColorPalette(cp.options);
+      });
+
 			function init(custom){
 				paper.setup(canvas);
 				getColorsCreatePalette();
@@ -147,6 +174,7 @@
 				paper.project.importSVG(mandala.filePath, function(item) {
 					mandala.item = item._children["design-freepik"];
 				    paper.project.insertLayer(0,mandala.item);
+						paper.project.layers[0].fitBounds(paper.view.bounds)
 
 				    if (custom) {
 				    	myCustomInteraction();
@@ -165,17 +193,27 @@
 <body>
 	<div class="container-fluid">
 			<div class="column w-100 h-100" id = 'space'>
+
 				<div class="column h-100 bg-success" id = 'column1'>
-					<div class="row w-100" id = 'c1r1'>
-  				</div>
-					<div class="row w-100" id = 'c1r2'>
-						<div class="column h-100" id = 'c1r2c1'>
+
+						<div class="column h-100" id = 'c1c1'>
+							<div class="row w-100" id = 'c1c1r1'>
+								<div class="column h-100" id = 'c1c1r1c1'>
+								</div>
+								<div class="column h-100" id = 'c1c1r1c2'>
+									<label for="colorpicker">Color Picker:</label>
+									<input type="color" id="colorpicker" value="#0000ff">
+								</div>
+							</div>
+							<div class="row w-100" id = 'c1c1r2'>
+								<div id="color-palette"></div>
+							</div>
+							<div class="row w-100" id = 'c1c1r3'>
+							</div>
 						</div>
-						<div class="column h-100" id = 'c1r2c2'>
+						<div class="column h-100" id = 'c1c2'>
+							<canvas id="myCanvas" width="750px" height="750px"></canvas>
 						</div>
-  				</div>
-					<div class="row w-100" id = 'c1r3'>
-  				</div>
 
 				</div>
 				<div class="column h-100 bg-warning" id = 'column2'>

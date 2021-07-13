@@ -6,6 +6,11 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   	<title>P3 Coloring</title>
 
+	<link rel="stylesheet" type="text/css" href="{% static 'coloring/vendors/bootstrap/css/bootstrap.css' %}" />
+
+	<script src="{% static 'coloring/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
+	<script src="{% static 'coloring/vendors/jquery-ui/jquery-ui.min.js' %}"></script>
+
 	<script type="text/javascript" src="{% static 'coloring/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'coloring/vendors/paper/paper-full.min.js' %}"></script>
 
@@ -30,10 +35,50 @@
 
 		#myCanvas {
 			padding-left: 0;
-		    padding-right: 0;
-		    margin-left: auto;
-		    margin-right: auto;
-		    display: block;
+		  padding-right: 0;
+		  margin-left: auto;
+		  margin-right: auto;
+		  display: block;
+		}
+
+		.container-fluid{
+			height: 100vh;
+			width: 100vw;
+			padding-left: 0rem;
+  		padding-right: 0rem;
+		}
+
+		#column1 {
+			width:70%;
+			float:left;
+		}
+
+		#column2 {
+			width:30%;
+			float:left;
+		}
+
+		#c1r1{
+			height: 15%;
+		}
+
+		#c1r2{
+			height: 70%;
+			margin: auto;
+		}
+
+		#c1r2c1 {
+			width: 20%;
+			background-color: red;
+		}
+
+		#c1r2c2 {
+			width: 80%;
+			background-color: blue;
+		}
+
+		#c1r3{
+			height: 15%;
 		}
 	</style>
 
@@ -118,8 +163,25 @@
 	</script>
 </head>
 <body>
+	<div class="container-fluid">
+			<div class="column w-100 h-100" id = 'space'>
+				<div class="column h-100 bg-success" id = 'column1'>
+					<div class="row w-100" id = 'c1r1'>
+  				</div>
+					<div class="row w-100" id = 'c1r2'>
+						<div class="column h-100" id = 'c1r2c1'>
+						</div>
+						<div class="column h-100" id = 'c1r2c2'>
+						</div>
+  				</div>
+					<div class="row w-100" id = 'c1r3'>
+  				</div>
 
-	<canvas id="myCanvas" width="750px" height="750px"></canvas>
-	<div id="color-palette"></div>
+				</div>
+				<div class="column h-100 bg-warning" id = 'column2'>
+
+	  		</div>
+  		</div>
+		</div>
 </body>
 </html>

@@ -40,12 +40,6 @@
 		  margin-right: auto;
 		  display: block;
 			position: relative;
-			/*
-			object-fit:scale-down;
-			position: absolute;
-	 		top: 50%;
-	 		left: 50%;
-	 		transform: translate(-50%, -50%); */
 			transform: scale(0.8);
 		}
 
@@ -162,9 +156,15 @@
 				});
 			}
 
-			$( "#colorpicker" ).click(function changeColor() {
-            cp.options.push(document.getElementById("colorpicker").value);
-						createColorPalette(cp.options);
+			$( "#reset" ).click(function addCustomColor() {
+				var customColor = document.getElementById("colorpicker").value;
+				var $swatch = $("<div>").css("background-color", customColor)
+									 .addClass("swatch");
+				$swatch.click(function(){
+					// add color to the color palette history
+						cp.history.push(customColor);
+				});
+				cp.$container.append($swatch);
       });
 
 			function init(custom){
@@ -209,14 +209,22 @@
 								<div id="color-palette"></div>
 							</div>
 							<div class="row w-100" id = 'c1c1r3'>
+								<button type="button" id = 'reset'>Add custom color to palette!</button>
 							</div>
 						</div>
+
 						<div class="column h-100" id = 'c1c2'>
 							<canvas id="myCanvas" width="750px" height="750px"></canvas>
 						</div>
 
 				</div>
 				<div class="column h-100 bg-warning" id = 'column2'>
+					<div class = "row h-50 w-100">
+						<div class = "row h-50 w-100" id = 'frame'>
+						</div>
+						<div class = "row h-50 w-100" id = >
+						</div>
+					</div>
 
 	  		</div>
   		</div>

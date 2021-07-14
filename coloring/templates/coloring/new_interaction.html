@@ -7,6 +7,7 @@
   	<title>P3 Coloring</title>
 
 	<link rel="stylesheet" type="text/css" href="{% static 'coloring/vendors/bootstrap/css/bootstrap.css' %}" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Zen-Loop">
 
 	<script src="{% static 'coloring/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
 	<script src="{% static 'coloring/vendors/jquery-ui/jquery-ui.min.js' %}"></script>
@@ -57,7 +58,8 @@
 	  text-align: center;
 	  text-decoration: none;
 	  display: inline-block;
-	  font-size: 14px;
+		font-family: "Zen Loop";
+	  font-size: 90%;
 	  margin: auto;
 	  transition-duration: 0.4s;
 	  cursor: pointer;
@@ -80,7 +82,8 @@
 	  text-align: center;
 	  text-decoration: none;
 	  display: inline-block;
-	  font-size: 14px;
+		font-family: "Zen Loop";
+	  font-size: 90%;
 	  margin: auto;
 	  transition-duration: 0.4s;
 	  cursor: pointer;
@@ -103,15 +106,16 @@
 	  text-align: center;
 	  text-decoration: none;
 	  display: inline-block;
-	  font-size: 14px;
+		font-family: "Zen Loop";
+	  font-size: 90%;
 	  margin: auto;
 	  transition-duration: 0.4s;
 	  cursor: pointer;
 		background-color: #c6f3f6;
 	  color: black;
 	  border: 2px solid #c6f3f6;
-		width: 80%;
-		max-height: 100%;
+		width: 100%;
+		max-height: 70%;
 		}
 
 		#advanced:hover {
@@ -120,7 +124,9 @@
 		}
 
 		p {
-			font-size: 14px;
+			font-family: "Zen Loop";
+			font-size: 90%;
+			padding-left: 6px;
 		}
 
 		.container-fluid{
@@ -143,17 +149,16 @@
 
 		#c1c1 {
 			width: 20%;
-			background-color: red;
+			background-color: white;
 			float:left;
 		}
 
 		#c1c2 {
 			width: 80%;
-			background-color: blue;
 			float:left;
+			border-width: 40px;
+			border-color: whitesmoke;
 			border-style: solid;
-			border-color: black;
-			border-width: 30px
 		}
 
 		#c1c1r1 {
@@ -175,18 +180,104 @@
 		}
 
 		#c1c1r1c2 {
-			width: 80%;
+			width: 60%;
 		}
 
-		.row{
+		.title {
+			text-align: center;
+			margin: auto;
+			font-family: "Zen Loop";
+			font-size: 100%;
+			background-color: #c6f3f6;
+		}
+
+		.options{
+			height: 80%;
+			width: 90%;
+		}
+
+		.thirds {
+			height:  100%;
+			width:  33.333333333333%;
+			background-color: whitesmoke;
+			border:  solid;
+			border-width: 3px;
+		}
+
+		#shortback {
+			height: 50%;
+		}
+
+		.row {
 			margin: auto;
 		}
 
-		h2 {
-			text-align: center;
-			size: 30px;
+		#canvas {
+			background-image: url(https://image.shutterstock.com/image-vector/background-grey-canvasvector-illustration-260nw-212857258.jpg);
 		}
 
+		#wood{
+			background-image: url(https://images.pexels.com/photos/129731/pexels-photo-129731.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+		}
+
+		#paper {
+			background-image: url(https://img.freepik.com/free-photo/white-art-paper-background_35956-2377.jpg?size=626&ext=jpg);
+		}
+
+		#black {
+			background-image: url(https://cdn.nexternal.com/scc/images/mill_hill_matte_black_frame_gbfrm1-th.jpg);
+		}
+
+		#brown {
+			background-image: url(https://www.pictureframes.com/media/upload-image-preview/PEM5_pkg/1x1.png);
+		}
+
+		#white {
+			background-image: url(https://images-na.ssl-images-amazon.com/images/I/51l6Ub2RPLL._AC_SY450_.jpg);
+		}
+
+		#gold {
+			background-image: url(https://m.media-amazon.com/images/I/81vq39-MT-L._AC_SX522_.jpg);
+
+		}
+
+		#beige {
+			background-image: url(https://www.pictureframes.com/media/upload-image-preview/MOL3_pkg/1x1.png);
+		}
+
+		#silver {
+			background-image: url(https://image.shutterstock.com/image-photo/silver-frame-isolated-on-white-260nw-254048779.jpg);
+		}
+
+
+
+		#backblack{
+			background-color: black;
+		}
+
+		#backwhite{
+			background-color: white;
+		}
+
+		#backgray{
+			background-color: gray;
+		}
+
+		#backbeige {
+			background-color: #eeceaf;
+		}
+
+		#backbrown {
+			background-color: #5d3209;
+		}
+
+		#backnavy {
+			background-color: #afb3ee;
+		}
+
+		.split{
+			height: 37.5%
+		}
 
 	</style>
 
@@ -291,6 +382,87 @@
 
 			// Set up the mandala interactivity.
 			init(true);
+
+			$('#black').click(function(){
+				$("#c1c2").css('border-style', "groove");
+				$("#c1c2").css('border-color', "black");
+				$("#c1c2").css('border-width', "40px");
+			})
+
+			$('#brown').click(function(){
+				$("#c1c2").css('border-style', "ridge");
+				$("#c1c2").css('border-color', "sienna");
+				$("#c1c2").css('border-width', "40px");
+			})
+
+			$('#white').click(function(){
+				$("#c1c2").css('border-style', "inset");
+				$("#c1c2").css('border-color', "whitesmoke");
+				$("#c1c2").css('border-width', "40px");
+			})
+
+			$('#gold').click(function(){
+				$("#c1c2").css('border-style', "groove");
+				$("#c1c2").css('border-color', "gold");
+				$("#c1c2").css('border-width', "40px");
+			})
+
+			$('#silver').click(function(){
+				$("#c1c2").css('border-style', "ridge");
+				$("#c1c2").css('border-color', "silver");
+				$("#c1c2").css('border-width', "40px");
+			})
+
+			$('#beige').click(function(){
+				$("#c1c2").css('border-style', "inset");
+				$("#c1c2").css('border-color', "bisque");
+				$("#c1c2").css('border-width', "40px");
+			})
+
+			$('#canvas').click(function(){
+				$("#c1c2").css("background-image", "url('https://image.shutterstock.com/image-vector/background-grey-canvasvector-illustration-260nw-212857258.jpg')")
+				$("#c1c2").css("background-size", "100% 120%")
+			})
+
+			$('#wood').click(function(){
+				$("#c1c2").css("background-image", "url('https://images.pexels.com/photos/129731/pexels-photo-129731.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')")
+				$("#c1c2").css("background-size", "100% 120%")
+			})
+
+			$('#paper').click(function(){
+				$("#c1c2").css("background-image", "url('https://img.freepik.com/free-photo/white-art-paper-background_35956-2377.jpg?size=626&ext=jpg')")
+				$("#c1c2").css("background-size", "100% 120%")
+			})
+
+			$('#backblack').click(function(){
+				$("#c1c2").css("background-image", "none" );
+				$("#c1c2").css("background-color", $("#backblack").css( "background-color" ));
+			})
+
+			$('#backwhite').click(function(){
+				$("#c1c2").css("background-image", "none" );
+				$("#c1c2").css("background-color", $("#backwhite").css( "background-color" ));
+			})
+
+			$('#backgray').click(function(){
+				$("#c1c2").css("background-image", "none" );
+				$("#c1c2").css("background-color", $("#backgray").css( "background-color" ));
+			})
+
+			$('#backbeige').click(function(){
+				$("#c1c2").css("background-image", "none" );
+				$("#c1c2").css("background-color", $("#backbeige").css( "background-color" ));
+			})
+
+			$('#backbrown').click(function(){
+				$("#c1c2").css("background-image", "none" );
+				$("#c1c2").css("background-color", $("#backbrown").css( "background-color" ));
+			})
+
+			$('#backnavy').click(function(){
+				$("#c1c2").css("background-image", "none" );
+				$("#c1c2").css("background-color", $("#backnavy").css( "background-color" ));
+			})
 		}
 	</script>
 </head>
@@ -298,14 +470,14 @@
 	<div class="container-fluid">
 			<div class="column w-100 h-100" id = 'space'>
 
-				<div class="column h-100 bg-success" id = 'column1'>
+				<div class="column h-100" id = 'column1'>
 
 						<div class="column h-100" id = 'c1c1'>
 							<div class="row w-100" id = 'c1c1r1'>
 								<div class="column h-100" id = 'c1c1r1c1'>
 								</div>
 								<div class="column h-100" id = 'c1c1r1c2'>
-									<label for="colorpicker">Custom Color Picker:</label>
+									<label for="colorpicker" style='background:#c6f3f6; font-family: "Zen Loop"; text-align:center'>Custom Color Picker:</label>
 									<input type="color" id="colorpicker" value="#0000ff">
 								</div>
 							</div>
@@ -317,30 +489,120 @@
 							<div class="row w-100" id = 'c1c1r3'>
 								<button type="button" id = 'addColor'>Add custom colorpicker color to palette!</button>
 								<button type="button" id = 'reset'>Reset color palette!</button>
-								<p><a href='https://trycolors.com/' target="_blank"><button type="button" id = 'advanced'>Click HERE</button></a> for advanced color mixing HEX code generator. Then copy-paste HEX code into Custom Color Picker!</p>
+								<div>
+								<a href='https://trycolors.com/' target="_blank"><button type="button" id = 'advanced'>Click HERE</button></a>
+								<p> for advanced color mixing HEX code generator. Then copy-paste HEX code into Custom Color Picker!</p>
+							</div>
 							</div>
 						</div>
 
 						<div class="column h-100" id = 'c1c2'>
-							<br><br>
+							<br>
 							<canvas id="myCanvas" width="750px" height="750px"></canvas>
 						</div>
 
 				</div>
-				<div class="column h-100 bg-warning" id = 'column2'>
+				<div class="column h-100" id = 'column2'>
 					<div class = "row h-25 w-100">
-						<div class = "row h-25 w-100 title bg-success">
-							<h2>
-								Canvas
-							</h2>
+						<div class = "row h-25 w-100">
+							<div class = 'title'>
+							Canvas
+							</div>
 						</div>
 						<div class = "row h-75 w-100 bg-dark">
+							<div class = "row options">
+								<div class = "column thirds" id = 'canvas'>
+								</div>
+
+								<div class = "column thirds" id = 'wood'>
+								</div>
+
+								<div class = "column thirds" id = 'paper'>
+								</div>
+
+							</div>
 
 						</div>
 					</div>
-	  		</div>
 
-  		</div>
-		</div>
+					<div class = 'row split'>
+						<div class = "row h-25 w-100">
+							<div class = 'title'>
+							Frame
+							</div>
+						</div>
+
+						<div class = "row h-75 w-100 bg-dark">
+							<div class = "row h-50 w-100 bg-dark">
+								<div class = "row options">
+									<div class = "column thirds" id = 'black'>
+									</div>
+
+									<div class = "column thirds" id = 'brown'>
+									</div>
+
+									<div class = "column thirds" id = 'white'>
+									</div>
+
+								</div>
+							</div>
+
+							<div class = "row h-50 w-100 bg-dark">
+								<div class = "row options">
+									<div class = "column thirds" id = 'gold'>
+									</div>
+
+									<div class = "column thirds" id = 'silver'>
+									</div>
+
+									<div class = "column thirds" id = 'beige'>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class = 'row split'>
+						<div class = "row h-25 w-100">
+							<div class = 'title'>
+							Background Color
+							</div>
+						</div>
+
+						<div class = "row h-75 w-100 bg-dark">
+							<div class = "row h-50 w-100 bg-dark">
+								<div class = "row options">
+									<div class = "column thirds" id = 'backblack'>
+									</div>
+
+									<div class = "column thirds" id = 'backwhite'>
+									</div>
+
+									<div class = "column thirds" id = 'backgray'>
+									</div>
+
+								</div>
+							</div>
+
+							<div class = "row h-50 w-100 bg-dark">
+								<div class = "row options">
+									<div class = "column thirds" id = 'backbeige'>
+									</div>
+
+									<div class = "column thirds" id = 'backbrown'>
+									</div>
+
+									<div class = "column thirds" id = 'backnavy'>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
 </body>
 </html>

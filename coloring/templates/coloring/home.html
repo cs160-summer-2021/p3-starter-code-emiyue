@@ -1,0 +1,124 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  	<title>P3 Coloring</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'coloring/vendors/bootstrap/css/bootstrap.css' %}" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Zen-Loop">
+
+	<script src="{% static 'coloring/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
+	<script src="{% static 'coloring/vendors/jquery-ui/jquery-ui.min.js' %}"></script>
+
+	<script type="text/javascript" src="{% static 'coloring/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'coloring/vendors/paper/paper-full.min.js' %}"></script>
+
+	<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
+  	<style type="text/css">
+		.container-fluid{
+			height: 100vh;
+			width: 100vw;
+			padding-left: 0rem;
+			background-color: ;
+		}
+
+		#box {
+			background-image: url(https://assets.bigcartel.com/product_images/304915923/Minimal+Design+Rug+_Abstract+Rug_+Modern+Rug_+Soft+Carpet_+Abstract+Rug_+Geometric+Art_+Area+Rug_+Captcha+Studio_3.jpg?auto=format&fit=max&w=800);
+			height: 100%;
+			width: 102%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		.button {
+			margin: auto;
+			background-color: moccasin;
+			border-radius: 10px;
+			border-style: solid;
+			border-color:  mediumpurple;
+			border-radius: 50px;
+		}
+
+		.column{
+			margin: auto;
+			float: left;
+		}
+
+		.row{
+			margin: auto;
+		}
+
+		.start{
+			margin: auto;
+			font-size: 40px;
+			color: mediumpurple;
+			font-family: "indie flower";
+		}
+
+		#palette {
+			margin: auto;
+			font-size: 150px;
+			text-align: center;
+			color:  mediumpurple;
+			text-shadow: 0 0 20px burlywood;
+			font-family: "indie flower";
+		}
+
+		#text {
+			margin-top: 5%;
+		}
+
+		#help {
+			height: 20%;
+			border-radius: 35px;
+			margin-top: 5%;
+		}
+
+
+
+
+    </style>
+
+    <script type="text/javascript">
+
+    </script>
+  </head>
+  <body>
+		<div class = 'container-fluid'>
+			<div class = 'row h-100 bg-danger' id = 'box'>
+				<div class = 'row h-50 w-100'>
+					<div class = 'column w-25 h-100 '>
+
+					</div>
+					<div class = 'column w-50 h-100'>
+						<div class = 'row h-75 w-75' id = 'text'>
+							<label id = 'palette'> ~Palette~ </label>
+						</div>
+
+					</div>
+					<div class = 'column w-25 h-100'>
+						<div class = 'row w-50 button' id = 'help'>
+							<label class = 'start'>Help</label>
+						</div>
+
+					</div>
+				</div>
+
+				<div class = 'row h-50 w-100'>
+					<div class = 'row h-25 w-25 button' id = 'press' onclick="window.location.href='/coloring/projects'">
+						<label class = 'start'>Start</label>
+
+					</div>
+				</div>
+
+
+			</div>
+
+		</div>
+
+  </body>
+  </html>

@@ -1,0 +1,140 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  	<title>P3 Coloring</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'coloring/vendors/bootstrap/css/bootstrap.css' %}" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Zen-Loop">
+
+	<script src="{% static 'coloring/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
+	<script src="{% static 'coloring/vendors/jquery-ui/jquery-ui.min.js' %}"></script>
+
+	<script type="text/javascript" src="{% static 'coloring/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'coloring/vendors/paper/paper-full.min.js' %}"></script>
+
+  	<style type="text/css">
+      .box-outer {
+      	display: flex;
+      	flex-direction: column;
+      	background-color: purple;
+        background: url("https://assets.bigcartel.com/product_images/304915923/Minimal+Design+Rug+_Abstract+Rug_+Modern+Rug_+Soft+Carpet_+Abstract+Rug_+Geometric+Art_+Area+Rug_+Captcha+Studio_3.jpg?auto=format&fit=max&w=800");
+        background-size: 100% 100%;
+        width: 100%;
+      	height: 100%;
+      	position: fixed;
+      	z-index: -1;
+      }
+      .box-flex {
+      	display: flex;
+      	flex-direction: row;
+      	width: 100%;
+      	height: 33.3333333%;
+        position: relative;
+      	z-index: 0;
+      }
+      .square-plus {
+      	display: flex;
+        background: url("https://cdn.icon-icons.com/icons2/2761/PNG/512/plus_insert_add_rectangle_icon_176436.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+      	width: 20%;
+      	height: 78%;
+      	margin: 2%;
+      	position: relative;
+      	z-index: 1;
+      }
+      .square-f {
+      	display: flex;
+      	width: 100%;
+      	height: 78%;
+      	margin-top: 2%;
+      	margin-left: 3%;
+      	position: relative;
+      	z-index: 1;
+        text-color: #7C6AEA;
+        font-family: "Zen Loop";
+    	  font-size: 48px;
+      }
+
+      .container-fluid {
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        height: 100vh;
+        margin: auto;
+        padding: 0;
+        position: fixed;
+        z-index: -1;
+      }
+
+      .fillback {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden
+          position: fixed;
+          z-index: 0;
+          width: 100vw;
+          height: 100vh;
+      }
+
+      .fill {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden
+          position: relative;
+          z-index: 2;
+      }
+
+      .row1 {
+        display: flex;
+      	flex-direction: column;
+      	width: 100%;
+      	height: 33.3333333%;
+        position: relative;
+        z-index: 1;
+      }
+
+      .row2 {
+        display: flex;
+      	flex-direction: column;
+      	width: 100%;
+      	height: 66.6666667%;
+        position: relative;
+        z-index: 1;
+      }
+
+
+    </style>
+
+    <script type="text/javascript" canvas="canvas">
+
+    </script>
+  </head>
+  <body>
+    <div class="box-outer">
+		<div class="box-flex">
+      <div class="square-f">Projects</div>
+      </div>
+			<div class="box-flex">
+        <div class="square-plus"></div>
+        <div class="square-h"></div>
+        <div class="square-h"></div>
+				<div class="square-h"></div>
+        <div class="square-h"></div>
+      </div>
+			<div class="box-flex">
+        <div class="square-h"></div>
+        <div class="square-h"></div>
+        <div class="square-h"></div>
+				<div class="square-h"></div>
+        <div class="square-h"></div>
+      </div>
+		</div>
+
+  </body>
+  </html>
